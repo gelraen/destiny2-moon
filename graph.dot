@@ -1,0 +1,47 @@
+graph Moon {
+	// Primary locations. These are named on the map.
+	SANCTUARY [label="Sanctuary",shape="doubleoctagon",penwidth=2];
+	ANCHOR [label="Anchor of Light",shape="doubleoctagon",penwidth=2];
+	LINE [label="Archer's Line",shape="doubleoctagon",penwidth=2];
+	HARBOR [label="Sorrow's Harbor",shape="doubleoctagon",penwidth=2];
+	HELLMOUTH [label="Hellmouth",shape="doubleoctagon",penwidth=2];
+
+	// Other locations, not named on the map.
+	ABYSS [label="Enduring Abyss"];
+	BATTLEGROUNDS [label="Lunar Battlegrounds"];
+	CATACOMBS [label="Catacombs"];
+	CIRCLE [label="Circle of Bones"];
+	CROTA [label="Temple of Crota"];
+	GATEHOUSE [label="The Gatehouse"];
+	GRAVE [label="The World's Grave"];
+	KEEP [label="Scarlet Keep"];
+	KETCH [label="Traitor's Ketch"];
+	NIGHT [label="Chamber of Night"];
+	ORYX [label="Shrine of Oryx"];
+	PITS [label="The Summoning Pits"];
+	WISDOM [label="Hall of Wisdom"];
+
+	SANCTUARY -- LINE;
+	SANCTUARY -- ANCHOR;
+	LINE -- ANCHOR;
+	LINE -- HELLMOUTH;
+	ANCHOR -- HELLMOUTH;
+	HELLMOUTH -- HARBOR;
+
+	LINE -- WISDOM -- ORYX;
+	WISDOM -- CIRCLE;
+	CIRCLE -- PITS;
+	CIRCLE -- CATACOMBS;
+	CIRCLE -- GRAVE;
+	GRAVE -- CROTA;
+	CROTA -- ANCHOR;
+	ANCHOR -- KETCH;
+	GRAVE -- NIGHT;
+	CIRCLE -- GATEHOUSE;
+	GATEHOUSE -- HELLMOUTH;
+	HARBOR -- ABYSS;
+	HARBOR -- KEEP;
+	HARBOR -- BATTLEGROUNDS;
+
+	ABYSS -- SANCTUARY [style="dotted"]; // Portal
+}
